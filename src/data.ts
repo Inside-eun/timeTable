@@ -195,7 +195,7 @@ export const festivalData: Artist[] = [
     time: '17:35-18:20',
     day: 'Day 2 (11/15 토)',
     genre: 'J-Rock',
-    youtubeVideos: ['AaGv2zd8P3g', 'O2HSRs4hR-0', 'f8x3uH_pSjs'], // unravel, abnormalize, Telecastic fake show
+    youtubeVideos: ['x3bJ6hVSjDU', 'Xe6Rc4Aq1wc', 'f8x3uH_pSjs'], // unravel, abnormalize, Telecastic fake show
   },
   {
     id: 25,
