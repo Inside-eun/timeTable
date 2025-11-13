@@ -13,7 +13,7 @@ const Timetable = ({ artists, onArtistClick, selectedArtistId }: TimetableProps)
   return (
     <div className="timetable-container">
       <h1 className="timetable-title">2025 원더리벳 벼락치기</h1>
-      <p className="timetable-subtitle">내일부터 시작인데 예습 안한 나를 위한 사이트</p>
+      <p className="timetable-subtitle">내일부터 시작인데 예습 안한 나를 위한 사이트 : 수정중</p>
       <div className="timetable-grid">
         {days.map(day => (
           <div key={day} className="day-column">
