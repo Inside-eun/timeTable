@@ -1,0 +1,111 @@
+.youtube-player-container {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 32px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: slideDown 0.5s ease-out;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.player-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.player-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: linear-gradient(135deg, #000000 0%, #1a1528 100%);
+  margin: 0;
+}
+
+.video-indicators {
+  display: flex;
+  gap: 8px;
+}
+
+.indicator {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid linear-gradient(135deg, #000000 0%, #1a1528 100%);
+  background: white;
+  color: #3d2a5c;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.indicator:hover {
+  background: #f0f0f0;
+  transform: scale(1.1);
+}
+
+.indicator.active {
+  background:linear-gradient(135deg, #000000 0%, #1a1528 100%);
+  color: white;
+}
+
+.player-wrapper {
+  position: relative;
+  padding-bottom: 45%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  max-width: 100%;
+}
+
+.player-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .youtube-player-container {
+    padding: 16px;
+    max-width: 100%;
+  }
+
+  .player-wrapper {
+    padding-bottom: 56.25%;
+  }
+
+  .player-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .player-header h2 {
+    font-size: 20px;
+  }
+
+  .indicator {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+}
+

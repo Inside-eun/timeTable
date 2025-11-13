@@ -1,0 +1,195 @@
+.timetable-container {
+  background: rgba(229, 231, 235, 0.1);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.timetable-title {
+  font-size: 36px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 32px;
+  background: linear-gradient(to right, #DAD7F5, #B4E2EF, #ADA2EB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.timetable-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 32px;
+    background: linear-gradient(to right, #DAD7F5, #B4E2EF, #ADA2EB);
+
+}
+
+.timetable-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.day-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.day-header {
+  background: linear-gradient(135deg, #000000 0%, #1a1528 100%);
+  color: white;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.artists-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.artist-card {
+  border-radius: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 3px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.artist-card.floor-1 {
+  background: linear-gradient(135deg, #DAD7F5 0%, #8f7bff 100%);
+}
+
+.artist-card.floor-2 {
+  background: linear-gradient(135deg, #B4E2EF 0%, #6ec3ff 100%);
+}
+
+.floor-label {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.artist-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.artist-card:hover::before {
+  opacity: 0.1;
+}
+
+.artist-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(61, 42, 92, 0.3);
+}
+
+.artist-card.selected {
+  border-color: #3d2a5c;
+  box-shadow: 0 8px 24px rgba(61, 42, 92, 0.5);
+  background: linear-gradient(135deg, #000000 0%, #1a1528 100%) !important;
+}
+
+.artist-card.selected .floor-label {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.artist-card.selected .artist-time,
+.artist-card.selected .artist-name {
+  color: white;
+}
+
+.artist-time {
+  font-size: 13px;
+  font-weight: 600;
+  color: #3d2a5c;
+  margin-bottom: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+.artist-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .timetable-container {
+    padding: 20px 0;
+    padding-bottom: 40px;
+    overflow: hidden;
+  }
+
+  .timetable-title {
+    font-size: 28px;
+    margin-bottom: 24px;
+    padding: 0 20px;
+  }
+
+  .timetable-grid {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .timetable-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .day-column {
+    min-width: 100%;
+    max-width: 100%;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .day-header {
+    font-size: 20px;
+    padding: 12px;
+  }
+
+  .artist-card {
+    padding: 10px 14px;
+  }
+
+  .artist-name {
+    font-size: 17px;
+  }
+
+  .artist-time {
+    font-size: 12px;
+  }
+}
+

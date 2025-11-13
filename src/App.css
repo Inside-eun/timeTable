@@ -1,0 +1,23 @@
+.app {
+  min-height: 100vh;
+  padding: 20px 0;
+  background: linear-gradient(135deg, #000000 0%, #1a1528 100%);
+  background-attachment: fixed;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 10px 0;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+}
+
