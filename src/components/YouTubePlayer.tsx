@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import YouTube, { YouTubeProps } from 'react-youtube';
-import './YouTubePlayer.css';
+import { useState, useEffect } from "react";
+import YouTube, { YouTubeProps } from "react-youtube";
+import "./YouTubePlayer.css";
 
 interface YouTubePlayerProps {
   videoIds: string[];
@@ -14,15 +14,15 @@ const YouTubePlayer = ({ videoIds, artistName }: YouTubePlayerProps) => {
     setCurrentVideoIndex(0);
   }, [videoIds]);
 
-  const opts: YouTubeProps['opts'] = {
-    height: '450',
-    width: '100%',
+  const opts: YouTubeProps["opts"] = {
+    height: "450",
+    width: "100%",
     playerVars: {
       autoplay: 1,
     },
   };
 
-  const onEnd: YouTubeProps['onEnd'] = () => {
+  const onEnd: YouTubeProps["onEnd"] = () => {
     if (currentVideoIndex < videoIds.length - 1) {
       setCurrentVideoIndex(currentVideoIndex + 1);
     } else {
@@ -33,12 +33,14 @@ const YouTubePlayer = ({ videoIds, artistName }: YouTubePlayerProps) => {
   return (
     <div className="youtube-player-container">
       <div className="player-header">
-        <h2>{artistName}의 대표곡</h2>
+        <h2>{artistName}</h2>
         <div className="video-indicators">
           {videoIds.map((_, index) => (
             <button
               key={index}
-              className={`indicator ${index === currentVideoIndex ? 'active' : ''}`}
+              className={`indicator ${
+                index === currentVideoIndex ? "active" : ""
+              }`}
               onClick={() => setCurrentVideoIndex(index)}
               aria-label={`곡 ${index + 1}`}
             >
@@ -59,4 +61,3 @@ const YouTubePlayer = ({ videoIds, artistName }: YouTubePlayerProps) => {
 };
 
 export default YouTubePlayer;
-
